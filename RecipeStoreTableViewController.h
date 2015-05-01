@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface RecipeStoreTableViewController : UITableViewController
+@interface RecipeStoreTableViewController : UITableViewController <NSFetchedResultsControllerDelegate> //The NSFetchedResultsControllerDelegate protocol provides methods to notify its delegate whenever there is any changes in the controller’s fetch results. Later we’ll implement the methods.
 
 @end
