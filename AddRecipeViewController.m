@@ -7,12 +7,17 @@
 //
 
 #import "AddRecipeViewController.h"
+#import "AppDelegate.h"
 
 @interface AddRecipeViewController ()
-
 @end
 
-@implementation AddRecipeViewController
+
+@implementation AddRecipeViewController {
+    Recipe *recipe;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,9 +39,34 @@
 }
 */
 
+
+/*
+ For the save: method, we first grab the managed object context via AppDelegate and then create a NSManagedObject for the new recipe. To use Core Data Framework, the model objects should be instances of NSManagedObject or instances of classes that inherit from NSManagedObject. Recalled that we’ve created a subclass or NSManagedObject named Recipe in the data model, we use it to associate with the entity.
+ To create a new instance of NSManagedObject for the Recipe entity, we use the insertNewObjectForEntityForName: method of the NSEntityDescription class to create a managed object. With the Recipe managed object, we then populate its properties with the values collected from the form. Lastly, we call up the save: method of the context to save the object into database. Always remember that the change of the model objects will not be saved to the persistent store until the save: method is called.
+ Finally, it’s the cancel: method. For the method, we simply invoke the dismissViewControllerAnimated: method to dismiss the current view controller when user taps the cancel button.
+ 
+ */
+
 - (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (IBAction)save:(id)sender {
+    
+    AppDelegate *appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    recipe = (Recipe *) [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:managedObjectContext];
+    recipe.name = self.nameTextField.text;
+    recipe.image = self.imageTextField.text;
+    recipe.prepTime = self.prepTimeTextField.text;
+    
+    NSError *error;
+    if (![managedObjectContext save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
+
+
 
 @interface AddRecipeViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;

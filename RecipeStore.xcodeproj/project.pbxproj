@@ -17,7 +17,8 @@
 		1A1F7DF01AF3258300EC96C6 /* RecipeStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F7DEF1AF3258300EC96C6 /* RecipeStoreTests.m */; };
 		1A9705B81AF3BB84005CDDB2 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705B71AF3BB84005CDDB2 /* AddRecipeViewController.m */; };
 		1A9705BB1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705BA1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m */; };
-		1A9705BE1AF3C06B005CDDB2 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705BD1AF3C06B005CDDB2 /* Recipes.m */; };
+		1A9705FB1AF3DA71005CDDB2 /* AddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705FA1AF3DA71005CDDB2 /* AddTableViewController.m */; };
+		1A9706071AF3ED6E005CDDB2 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9706061AF3ED6E005CDDB2 /* Recipe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,10 @@
 		1A9705B71AF3BB84005CDDB2 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 		1A9705B91AF3BC99005CDDB2 /* RecipeStoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeStoreTableViewController.h; sourceTree = "<group>"; };
 		1A9705BA1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeStoreTableViewController.m; sourceTree = "<group>"; };
-		1A9705BC1AF3C06B005CDDB2 /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
-		1A9705BD1AF3C06B005CDDB2 /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
+		1A9705F91AF3DA71005CDDB2 /* AddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTableViewController.h; sourceTree = "<group>"; };
+		1A9705FA1AF3DA71005CDDB2 /* AddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTableViewController.m; sourceTree = "<group>"; };
+		1A9706051AF3ED6E005CDDB2 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		1A9706061AF3ED6E005CDDB2 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +139,8 @@
 		1A9705B41AF3BB44005CDDB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A9705BC1AF3C06B005CDDB2 /* Recipes.h */,
-				1A9705BD1AF3C06B005CDDB2 /* Recipes.m */,
+				1A9706051AF3ED6E005CDDB2 /* Recipe.h */,
+				1A9706061AF3ED6E005CDDB2 /* Recipe.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -149,6 +152,8 @@
 				1A9705B71AF3BB84005CDDB2 /* AddRecipeViewController.m */,
 				1A9705B91AF3BC99005CDDB2 /* RecipeStoreTableViewController.h */,
 				1A9705BA1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m */,
+				1A9705F91AF3DA71005CDDB2 /* AddTableViewController.h */,
+				1A9705FA1AF3DA71005CDDB2 /* AddTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -255,7 +260,8 @@
 			files = (
 				1A1F7DD91AF3258300EC96C6 /* RecipeStore.xcdatamodeld in Sources */,
 				1A1F7DD61AF3258300EC96C6 /* AppDelegate.m in Sources */,
-				1A9705BE1AF3C06B005CDDB2 /* Recipes.m in Sources */,
+				1A9705FB1AF3DA71005CDDB2 /* AddTableViewController.m in Sources */,
+				1A9706071AF3ED6E005CDDB2 /* Recipe.m in Sources */,
 				1A9705BB1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m in Sources */,
 				1A1F7DDC1AF3258300EC96C6 /* ViewController.m in Sources */,
 				1A1F7DD31AF3258300EC96C6 /* main.m in Sources */,
