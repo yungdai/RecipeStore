@@ -32,6 +32,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="SPc-LF-zOD" kind="presentation" identifier="UpdateRecipe" id="IkP-fw-giM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Recipe Store" id="56p-bE-1jZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iby-hE-x7q">
                             <connections>
-                                <segue destination="SPc-LF-zOD" kind="modal" id="JYv-Jm-pos"/>
+                                <segue destination="SPc-LF-zOD" kind="presentation" id="JYv-Jm-pos"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -142,4 +145,7 @@
             <point key="canvasLocation" x="1978" y="547"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IkP-fw-giM"/>
+    </inferredMetricsTieBreakers>
 </document>
