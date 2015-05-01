@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eDa-O3-btI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Recipe Store-->
@@ -68,23 +69,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obw-TO-FuK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obw-TO-FuK">
                                 <rect key="frame" x="16" y="96" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Filename" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-FX-l8j">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Filename" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-FX-l8j">
                                 <rect key="frame" x="16" y="153" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preperation Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-Lu-cEK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preperation Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-Lu-cEK">
                                 <rect key="frame" x="16" y="209" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xX4-FX-l8j" firstAttribute="leading" secondItem="vN1-4n-EJP" secondAttribute="leadingMargin" id="DRi-E1-H6n"/>
+                            <constraint firstItem="xX4-FX-l8j" firstAttribute="trailing" secondItem="vN1-4n-EJP" secondAttribute="trailingMargin" id="S8k-G2-mjO"/>
+                            <constraint firstItem="yj0-Lu-cEK" firstAttribute="leading" secondItem="vN1-4n-EJP" secondAttribute="leadingMargin" id="UnY-nP-LaM"/>
+                            <constraint firstItem="Obw-TO-FuK" firstAttribute="leading" secondItem="vN1-4n-EJP" secondAttribute="leadingMargin" id="g2G-Un-ZXy"/>
+                            <constraint firstItem="yj0-Lu-cEK" firstAttribute="trailing" secondItem="vN1-4n-EJP" secondAttribute="trailingMargin" id="t8E-U1-2WC"/>
+                            <constraint firstItem="Obw-TO-FuK" firstAttribute="trailing" secondItem="vN1-4n-EJP" secondAttribute="trailingMargin" id="tIE-EB-2N8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x8x-Nl-ayV">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uFZ-r2-sOh">
