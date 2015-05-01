@@ -15,6 +15,9 @@
 		1A1F7DE11AF3258300EC96C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F7DE01AF3258300EC96C6 /* Images.xcassets */; };
 		1A1F7DE41AF3258300EC96C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F7DE21AF3258300EC96C6 /* LaunchScreen.xib */; };
 		1A1F7DF01AF3258300EC96C6 /* RecipeStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F7DEF1AF3258300EC96C6 /* RecipeStoreTests.m */; };
+		1A9705B81AF3BB84005CDDB2 /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705B71AF3BB84005CDDB2 /* AddRecipeViewController.m */; };
+		1A9705BB1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705BA1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m */; };
+		1A9705BE1AF3C06B005CDDB2 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9705BD1AF3C06B005CDDB2 /* Recipes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,12 @@
 		1A1F7DE91AF3258300EC96C6 /* RecipeStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1F7DEE1AF3258300EC96C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1F7DEF1AF3258300EC96C6 /* RecipeStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeStoreTests.m; sourceTree = "<group>"; };
+		1A9705B61AF3BB84005CDDB2 /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
+		1A9705B71AF3BB84005CDDB2 /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
+		1A9705B91AF3BC99005CDDB2 /* RecipeStoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeStoreTableViewController.h; sourceTree = "<group>"; };
+		1A9705BA1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeStoreTableViewController.m; sourceTree = "<group>"; };
+		1A9705BC1AF3C06B005CDDB2 /* Recipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
+		1A9705BD1AF3C06B005CDDB2 /* Recipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +74,8 @@
 		1A1F7DC41AF3258300EC96C6 = {
 			isa = PBXGroup;
 			children = (
+				1A9705B51AF3BB54005CDDB2 /* Controllers */,
+				1A9705B41AF3BB44005CDDB2 /* Models */,
 				1A1F7DCF1AF3258300EC96C6 /* RecipeStore */,
 				1A1F7DEC1AF3258300EC96C6 /* RecipeStoreTests */,
 				1A1F7DCE1AF3258300EC96C6 /* Products */,
@@ -120,6 +131,26 @@
 				1A1F7DEE1AF3258300EC96C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A9705B41AF3BB44005CDDB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A9705BC1AF3C06B005CDDB2 /* Recipes.h */,
+				1A9705BD1AF3C06B005CDDB2 /* Recipes.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1A9705B51AF3BB54005CDDB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A9705B61AF3BB84005CDDB2 /* AddRecipeViewController.h */,
+				1A9705B71AF3BB84005CDDB2 /* AddRecipeViewController.m */,
+				1A9705B91AF3BC99005CDDB2 /* RecipeStoreTableViewController.h */,
+				1A9705BA1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +255,11 @@
 			files = (
 				1A1F7DD91AF3258300EC96C6 /* RecipeStore.xcdatamodeld in Sources */,
 				1A1F7DD61AF3258300EC96C6 /* AppDelegate.m in Sources */,
+				1A9705BE1AF3C06B005CDDB2 /* Recipes.m in Sources */,
+				1A9705BB1AF3BC99005CDDB2 /* RecipeStoreTableViewController.m in Sources */,
 				1A1F7DDC1AF3258300EC96C6 /* ViewController.m in Sources */,
 				1A1F7DD31AF3258300EC96C6 /* main.m in Sources */,
+				1A9705B81AF3BB84005CDDB2 /* AddRecipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +456,7 @@
 				1A1F7DF51AF3258300EC96C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A1F7DF61AF3258300EC96C6 /* Build configuration list for PBXNativeTarget "RecipeStoreTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +465,7 @@
 				1A1F7DF81AF3258300EC96C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

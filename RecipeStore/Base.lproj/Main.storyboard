@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Recipe Store-->
         <scene sceneID="zLc-1M-ESq">
             <objects>
-                <tableViewController id="FnL-GC-fEW" sceneMemberID="viewController">
+                <tableViewController id="FnL-GC-fEW" customClass="RecipeStoreTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Ox-2o-3PY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Recipe Store" id="56p-bE-1jZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iby-hE-x7q"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iby-hE-x7q">
+                            <connections>
+                                <segue destination="SPc-LF-zOD" kind="modal" id="JYv-Jm-pos"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -49,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1264" y="547"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Recipe View Controller-->
         <scene sceneID="fk8-30-ZEX">
             <objects>
-                <viewController id="QmI-Vq-g6v" sceneMemberID="viewController">
+                <viewController id="QmI-Vq-g6v" customClass="AddRecipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="McT-uy-Tex"/>
                         <viewControllerLayoutGuide type="bottom" id="uSa-9W-oGl"/>
@@ -60,12 +64,42 @@
                     <view key="view" contentMode="scaleToFill" id="vN1-4n-EJP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obw-TO-FuK">
+                                <rect key="frame" x="16" y="96" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Filename" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-FX-l8j">
+                                <rect key="frame" x="16" y="153" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preperation Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-Lu-cEK">
+                                <rect key="frame" x="16" y="209" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="x8x-Nl-ayV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="uFZ-r2-sOh"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="oUm-Yh-CjG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uFZ-r2-sOh">
+                            <connections>
+                                <action selector="cancel:" destination="QmI-Vq-g6v" id="lDm-by-rQa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oUm-Yh-CjG">
+                            <connections>
+                                <action selector="save:" destination="QmI-Vq-g6v" id="sa2-9t-byO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageTextField" destination="xX4-FX-l8j" id="xRD-1s-KyT"/>
+                        <outlet property="nameTextField" destination="Obw-TO-FuK" id="Fpq-sj-EFe"/>
+                        <outlet property="prepTimeTextField" destination="yj0-Lu-cEK" id="L7r-Vj-JSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7Y-dZ-HWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,22 +124,22 @@
             <point key="canvasLocation" x="602" y="547"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Yme-LN-VK9">
+        <scene sceneID="S3t-n0-InN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nqM-aq-2TP" propertyAccessControl="none" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SPc-LF-zOD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eby-97-6iG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6FC-t1-8v4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QmI-Vq-g6v" kind="relationship" relationship="rootViewController" id="IdS-xU-n9o"/>
+                        <segue destination="QmI-Vq-g6v" kind="relationship" relationship="rootViewController" id="g5c-Rt-XY2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tHS-sF-Suo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7K-LU-aaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="547"/>
+            <point key="canvasLocation" x="1978" y="547"/>
         </scene>
     </scenes>
 </document>
