@@ -9,6 +9,7 @@
 #import "RecipeStoreTableViewController.h"
 #import "AppDelegate.h"
 #import "Recipe.h"
+#import "AddRecipeViewController.h"
 
 @interface RecipeStoreTableViewController ()
 
@@ -105,25 +106,43 @@
     [self.tableView endUpdates];
 }
 
-/*
+
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    // Delete the row from the data source
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    if (managedObjectContext != nil) {
+        
+        Recipe *recipeToDelete = (Recipe *)[fetchResultController objectAtIndexPath:indexPath];
+        [managedObjectContext deleteObject:recipeToDelete];
+        
+        NSError *error;
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Can't delete the record! %@ %@", error, [error localizedDescription]);
+        }
+    }
 }
-*/
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"UpdateRecipe"]) {
+        Recipe *selectedRecipe = [recipes objectAtIndex:[[self.tableView indexPathForSelectedRow]row]];
+        UINavigationController *destViewController = segue.destinationViewController;
+        AddRecipeViewController *recipeViewController = (AddRecipeViewController *) destViewController.topViewController;
+        recipeViewController.selectedRecipe = selectedRecipe;
+    }
+}
 
 /*
 // Override to support rearranging the table view.
